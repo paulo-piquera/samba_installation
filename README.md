@@ -1,4 +1,4 @@
-# Samba Installation Script 2.7
+# Samba Installation Script 2.8
 
 Description: A simple way to install samba with secure folder.
 
