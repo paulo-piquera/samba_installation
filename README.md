@@ -5,7 +5,7 @@ Description: A simple way to install samba with secure folder.
 
 # Steps:
 1 - Download and change the script permission:
-* wget https://raw.githubusercontent.com/paulo-piquera/samba_installation/master/samba.sh -O samba.sh && chmod +x samba.sh
+* wget https://raw.githubusercontent.com/paulo-piquera/samba_installation/master/samba.sh -O samba.sh && chmod +x samba.sh && sed -i -e 's/\r$//' samba.sh
 
 2 - Run the script:
 * ./samba.sh <br>
