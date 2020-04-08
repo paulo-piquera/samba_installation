@@ -10,7 +10,7 @@ Description: A simple way to install samba with secure folder.
 2 - Run the script:
 * ./samba.sh <br>
 or
-* .sh samba.sh
+* sh samba.sh
 
 3 - You will be asked for the user, password and directory for the script to perform the configuration.
 
