@@ -3,14 +3,14 @@
 #	Author: Paulo Silva Piquera <paulo_piquera@hotmail.com>
 #	Version: 2.7
 #
-echo -n Qual será o nome de usuário?
+echo -n Samba user: 
 read usernameSamba
-echo -n Qual será a senha?
+echo -n Samba password: 
 read passwordSamba
-echo -n Qual será o diretório a ser compartilhado?
+echo -n Samba directory: 
 read directorySamba
 
-echo Iniciando instalação...
+echo Starting installation...
 yum install dnf -y
 sudo dnf install samba samba-common samba-client -y
 sudo mv /etc/samba/smb.conf /etc/samba/smb.con.bak
@@ -48,4 +48,4 @@ systemctl restart smb
 systemctl restart nmb
 systemctl restart iptables
 systemctl stop iptables
-echo Instalação finalizada.
+echo Installation completed.
