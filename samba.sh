@@ -31,12 +31,23 @@ echo guest ok = no >> /etc/samba/smb.conf
 echo browsable =yes >> /etc/samba/smb.conf
 echo writable = yes >> /etc/samba/smb.conf
 echo read only = no >> /etc/samba/smb.conf
+firewall-cmd --permanent --zone=public --add-service=samba
+firewall-cmd --reload
 testparm
 systemctl start smb
 systemctl start nmb
 systemctl enable smb
 systemctl enable nmb
-systemctl stop iptables
+iptables -A INPUT -p udp --dport 389 -j ACCEPT
+iptables -A INPUT -p tcp --dport 389 -j ACCEPT
+iptables -I INPUT -p tcp --dport 389 -j ACCEPT
+iptables -A INPUT -p udp --dport 445 -j ACCEPT
+iptables -A INPUT -p tcp --dport 445 -j ACCEPT
+iptables -I INPUT -p tcp --dport 445 -j ACCEPT
+iptables -A INPUT -p udp --dport 901 -j ACCEPT
+iptables -A INPUT -p tcp --dport 901 -j ACCEPT
+iptables -I INPUT -p tcp --dport 901 -j ACCEPT
+service iptables save
 sudo groupadd secure_group
 sudo useradd -g secure_group $usernameSamba
 chown -R $usernameSamba:secure_group $directorySamba
@@ -47,5 +58,4 @@ testparm
 systemctl restart smb
 systemctl restart nmb
 systemctl restart iptables
-systemctl stop iptables
 echo Installation completed.
