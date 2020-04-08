@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #	Author: Paulo Silva Piquera <paulo_piquera@hotmail.com>
-#	Version: 2.7
+#	Version: 2.8
 #
 echo -n Samba user: 
 read usernameSamba
