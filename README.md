@@ -15,8 +15,8 @@ or
 3 - You will be asked for the user, password and directory for the script to perform the configuration.
 
 4 - After running the script, to connect to windows, it will be necessary to copy the IP or Hostname of the linux machine where the samba was installed and on the Windows machine, press the WIN + R keys and add in the field that will be shown the path, as shown below:
-* \\IP_ADDRESS\ <br>
+* \\\IP_ADDRESS\ <br>
 or
-* \\HOSTNAME\
+* \\\HOSTNAME\
 
 PS: The script was based on the _CentOS 7_ operating system, and may have errors in other Linux distributions.
